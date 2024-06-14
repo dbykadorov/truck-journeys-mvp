@@ -1,0 +1,34 @@
+<div class="actions">
+  <button mat-flat-button (click)="create()">Create new</button>
+
+</div>
+<table mat-table [dataSource]="(journeys | async) ?? []" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let journey"> {{journey.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> title </th>
+    <td mat-cell *matCellDef="let journey"> {{journey.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> description </th>
+    <td mat-cell *matCellDef="let journey"> {{journey.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arrivedOn">
+    <th mat-header-cell *matHeaderCellDef> arrivedOn </th>
+    <td mat-cell *matCellDef="let journey"> {{journey.arrivedOn}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="departedOn">
+    <th mat-header-cell *matHeaderCellDef> departedOn </th>
+    <td mat-cell *matCellDef="let journey"> {{journey.departedOn}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

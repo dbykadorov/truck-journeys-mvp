@@ -1,0 +1,10 @@
+{
+  "name": "otk-dev-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/otk-dev-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["otk-dev"],
+  "// targets": "to see all targets run: nx show project otk-dev-e2e --web",
+  "targets": {}
+}

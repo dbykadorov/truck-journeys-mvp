@@ -1,0 +1,31 @@
+{
+  "name": "otk-dev-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/otk-dev-api/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "otk-dev-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "otk-dev-api:build:development"
+        },
+        "production": {
+          "buildTarget": "otk-dev-api:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/otk-dev-api/jest.config.ts"
+      }
+    }
+  }
+}
